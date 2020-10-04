@@ -3,18 +3,23 @@
 # Make sure the following are defined in conf.d/pihole.conf
 # 
 # EXT_IP - External IP of network pihole will serve
-# PUID - User that you want Docker container to run as
-# GUID - Group that you want Docker container to run as
 
-# source config
-. ../conf.d/pihole.conf
+# Import config
+CONFS="eclectic-docker-common.conf pihole.conf"
+for c in $CONFS ; do 
+   if [ -f "../conf.d/$c" ]; then
+      . ../conf.d/$c
+   else
+      echo "Missing config: $c, please configure according to samples"
+   fi
+done
 
 docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp \
     -p 80:80 \
     -p 443:443 \
-    -e TZ="America/New_York" \
+    -e TZ="$LOCAL_TZ" \
     -e PUID=$PUID \
     -e PGID=$GUID \
     -v "../volumes.d/pihole/etc-pihole/:/etc/pihole/" \
