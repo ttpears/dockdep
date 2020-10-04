@@ -18,7 +18,7 @@ docker run -d \
   -e TZ=$LOCAL_TZ \
   -e UMASK_SET=022  \
   -p 8989:8989 \
-  -v ../conf.d/sonarr/config:/config \
+  -v ../volumes.d/sonarr/config:/config \
   -v $MEDIA_VOL/TvShows:/tv \
   -v $MEDIA_VOL:/downloads \
   --restart unless-stopped \

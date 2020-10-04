@@ -18,7 +18,7 @@ docker run -d \
   -e TZ=$LOCAL_TZ \
   -e UMASK_SET=022 \
   -p 7878:7878 \
-  -v ../conf.d/radarr/config:/config \
+  -v ../volumes.d/radarr/config:/config \
   -v $MEDIA_VOL/Movies:/movies \
   -v $MEDIA_VOL:/downloads \
   --restart unless-stopped \

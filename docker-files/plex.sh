@@ -18,7 +18,7 @@ docker run -d \
   -e PUID=$PUID \
   -e PGID=$GUID \
   -e UMASK_SET=022 \
-  -v ../conf.d/plex:/config \
+  -v ../volumes.d/plex:/config \
   -v $MEDIA_VOL/Movies:/srv/Media/Movies \
   -v $MEDIA_VOL/TvShows:/srv/Media/TvShows \
   -v $MEDIA_VOL/Audio:/srv/Media/Audio \

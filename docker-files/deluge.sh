@@ -19,7 +19,7 @@ docker run -d \
     -p 58946:58946 \
     --name=delugevpn \
     -v $MEDIA_VOL:/downloads \
-    -v ../conf.d/deluge/config:/config \
+    -v ../volumes.d/deluge/config:/config \
     -v /etc/localtime:/etc/localtime:ro \
     -e VPN_ENABLED=$VPN_ENABLED \
     -e VPN_USER=$VPN_USER \

@@ -17,7 +17,7 @@ docker run -d \
   -e TZ=$LOCAL_TZ \
   -e AUTO_UPDATE=true `#optional` \
   -p 9117:9117 \
-  -v ../conf.d/jackett/config:/config \
+  -v ../volumes.d/jackett/config:/config \
   -v $MEDIA_VOL:/downloads \
   --restart unless-stopped \
   linuxserver/jackett

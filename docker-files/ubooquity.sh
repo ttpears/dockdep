@@ -19,7 +19,7 @@ docker run -d \
   -e MAXMEM=1024 \
   -p 2202:2202 \
   -p 2203:2203 \
-  -v ../conf.d/ubooquity:/config \
+  -v ../volumes.d/ubooquity:/config \
   -v $MEDIA_VOL/Books:/books \
   -v $MEDIA_VOL:/files \
   --restart unless-stopped \

@@ -17,6 +17,6 @@ docker run -d \
   -e PGID=$GUID \
   -e TZ=$LOCAL_TZ \
   -p 3579:3579 \
-  -v ../conf.d/ombi/config:/config \
+  -v ../volumes.d/ombi/config:/config \
   --restart unless-stopped \
   linuxserver/ombi

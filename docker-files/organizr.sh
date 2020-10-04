@@ -13,7 +13,7 @@ done
 
 docker run -d \
   --name=organizr \
-  -v ../conf.d/organizr/config:/config \
+  -v ../volumes.d/organizr/config:/config \
   -e PUID=$PUID \
   -e PGID=$GUID \
   -p 7550:80 \
