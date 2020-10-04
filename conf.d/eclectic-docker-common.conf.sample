@@ -1,0 +1,27 @@
+# Eclectic Docker Home Sample Config
+#
+# Variables listed below are used in multiple containers
+# contained in this project. If you know what you're doing
+# feel free to update them as you see fit, otherwise you should
+# refer to the documentation to create/define these.
+#
+#
+# PUID/GUID
+#
+# This is the user/group the docker container will run as
+# Not critical for some containers, but other containers that write files
+# will need to all write with the same perms, or you'll run into
+# issues when accessing files across containers.
+#
+# If your local user is in the "docker" group, you can use your
+# regular user
+#
+PUID=$(id -u)
+GUID=$(id -g)
+
+# Update to match your locale
+LOCAL_TZ="America/New_York"
+
+# Local path to media directory
+MEDIA_VOL="/srv/Media"
+
