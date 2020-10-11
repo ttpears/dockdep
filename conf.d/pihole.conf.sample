@@ -1,0 +1,4 @@
+# Pi-hole docker sample config
+
+# Let it be auto-set, or override if needed
+EXT_IP=$(curl https://icanhazip.com)
