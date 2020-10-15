@@ -5,8 +5,38 @@
 
 VALID_CONTAINERS=$(ls -1 docker-files/ | sed -e 's/\.sh$//')
 
-CONTAINER_TO_RUN=$1
-if [ ! -f "docker-files/$1.sh" ]; then
+function showhelp () {
+   SCRIPT_NAME=`basename "$0"`
+   echo -e "\n$SCRIPT_NAME supports the following arguments:"
+   echo -e "\tinit <container name>\t - Initial deployment of a container"
+   echo -e "\tlist\t\t\t - Show supported containers"
+   echo -e "\thelp\t\t\t - Print this helpful message"
+}
+
+# Parse arguments
+case "$1" in
+   list) echo "Valid containers:"
+         echo "$VALID_CONTAINERS"
+         exit 1
+   ;;
+   init) 
+      if [ -z "$2" ]; then 
+         echo "Must pass a container name"
+         exit 1
+      elif [ ! -f "docker-files/$2.sh" ]; then
+         echo "Can't find 'docker-files/$2.sh"
+         exit 1
+      else
+         CONTAINER_TO_RUN=$2
+      fi
+   ;;
+   help) showhelp
+   ;;
+   *) showhelp
+   ;;
+esac
+
+if [ ! -f "docker-files/$CONTAINER_TO_RUN.sh" ]; then
    # Error
    echo "Unable to find 'docker-files/$CONTAINER_TO_RUN.sh', please create and try again"
    exit 1
