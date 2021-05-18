@@ -42,7 +42,7 @@ if [ ! -f "docker-files/$CONTAINER_TO_RUN.sh" ]; then
    exit 1
 else
    # Import config
-   CONFS="eclectic-docker-common.conf conf.d/$CONTAINER_TO_RUN.conf"
+   CONFS="dockdep-docker-common.conf conf.d/$CONTAINER_TO_RUN.conf"
    for c in $CONFS ; do
       if [ -f "conf.d/$c" ]; then
          . conf.d/$c

@@ -5,7 +5,7 @@
 # EXT_IP - External IP of network pihole will serve
 
 # Import config
-CONFS="eclectic-docker-common.conf pihole.conf"
+CONFS="dockdep-docker-common.conf pihole.conf"
 for c in $CONFS ; do 
    if [ -f "../conf.d/$c" ]; then
       . ../conf.d/$c

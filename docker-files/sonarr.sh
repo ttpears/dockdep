@@ -2,7 +2,7 @@
 
 # Import config
 
-CONFS="eclectic-docker-common.conf sonarr.conf"
+CONFS="dockdep-docker-common.conf sonarr.conf"
 for c in $CONFS ; do 
    if [ -f "../conf.d/$c" ]; then
       . ../conf.d/$c

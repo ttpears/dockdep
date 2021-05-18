@@ -2,7 +2,7 @@
 
 # Import config
 
-CONFS="eclectic-docker-common.conf deluge.conf"
+CONFS="dockdep-docker-common.conf deluge.conf"
 for c in $CONFS ; do 
    if [ -f "../conf.d/$c" ]; then
       . ../conf.d/$c
